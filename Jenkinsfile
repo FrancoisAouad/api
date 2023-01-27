@@ -1,10 +1,22 @@
 pipeline {
-  agent any
-  
-  stages {
-  
-  stage('test') {
-   echo 'heeeeeeeeeeeeeeeelllllllllllllllllloooooooooooo'
-         }
-  }
+    agent any 
+
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'make' 
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'make check'
+               
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
+            }
+        }
+    }
 }
