@@ -3,9 +3,8 @@ pipeline {
   
   stages {
   
-  stage('test'){
+  stage('test') {
   sh echo 'heeeeeeeeeeeeeeeelllllllllllllllllloooooooooooo'
-  
-  }
+         }
   }
 }
