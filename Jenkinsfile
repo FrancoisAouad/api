@@ -1,12 +1,13 @@
 pipeline {
     agent any 
-    environment {
-
+   environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
     }
     stages {
         stage('Building Docker image and Container...') { 
             steps { 
-                echo 'make' 
+                echo 'make $(DISABLE_AUTH)' 
             }
         }
         stage('Running test cases...') { 
