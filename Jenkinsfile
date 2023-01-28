@@ -1,19 +1,26 @@
 pipeline {
     agent any 
+    environment {
 
+    }
     stages {
-        stage('Build') { 
+        stage('Building Docker image and Container...') { 
             steps { 
                 echo 'make' 
             }
         }
-        stage('Test'){
+        stage('Running test cases...') { 
+            steps { 
+                echo 'make' 
+            }
+        }
+        stage('Pushing artifacts to nexus3...'){
             steps {
                 echo 'make check'
                
             }
         }
-        stage('Deploy') {
+        stage('Deploying application...') {
             steps {
                 echo 'make publish'
             }
