@@ -5,7 +5,7 @@ pipeline {
         DB_ENGINE    = 'sqlite'
     }
     stages {
-        stage('Building Docker image and Container...') { 
+        stage('Building app...') { 
             steps { 
                 echo 'make $(DISABLE_AUTH)' 
             }
@@ -13,12 +13,6 @@ pipeline {
         stage('Running test cases...') { 
             steps { 
                 echo 'make' 
-            }
-        }
-        stage('Pushing artifacts to nexus3...'){
-            steps {
-                echo 'make check'
-               
             }
         }
         stage('Deploying application...') {
